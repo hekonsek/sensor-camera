@@ -5,7 +5,7 @@ var camera = new RaspiCam({
 	output: "/var/rhiot/camera/queue/image_%06d.jpg", // image_000001.jpg, image_000002.jpg,...
 	encoding: "jpg",
 	timelapse: 1000,
-	timeout: 12000 // take a total of 4 pictures over 12 seconds
+	timeout: 120000 // take a total of 4 pictures over 12 seconds
 });
 
 camera.on("start", function( err, timestamp ){
@@ -25,8 +25,3 @@ camera.on("stop", function( err, timestamp ){
 });
 
 camera.start();
-
-// test stop() method before the full 12 seconds is up
-setTimeout(function(){
-	camera.stop();
-}, 10000);
