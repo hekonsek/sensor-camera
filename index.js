@@ -1,8 +1,15 @@
 var RaspiCam = require("raspicam");
+var mkdirp = require('mkdirp');
+
+var imagesDirectory = '/var/rhiot/camera/queue'
+
+mkdirp(imagesDirectory, function (err) {
+    if (err) console.error(err);
+});
 
 var camera = new RaspiCam({
 	mode: "timelapse",
-	output: "/var/rhiot/camera/queue/image_%06d.jpg", // image_000001.jpg, image_000002.jpg,...
+	output: imagesDirectory + "/image_%06d.jpg",
 	encoding: "jpg",
 	timelapse: 1000,
 	timeout: 120000 // take a total of 4 pictures over 12 seconds
