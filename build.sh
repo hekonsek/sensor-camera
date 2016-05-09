@@ -1,0 +1,1 @@
+sudo docker build -t rhiot/sensor-camera:0.1.5-SNAPSHOT .

@@ -1,0 +1,1 @@
+sudo docker run --privileged -v /var/rhiot/camera/queue:/var/rhiot/camera/queue -it camera
