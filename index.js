@@ -1,4 +1,4 @@
-var RaspiCam = require("nodemodules/raspicam");
+var RaspiCam = require("node_modules/raspicam");
 
 var camera = new RaspiCam({
 	mode: "timelapse",
